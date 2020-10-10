@@ -1,0 +1,232 @@
+<html>
+<head>
+ <title>wwwww</title>
+<script type="text/javascript" src="/sound/soundmanager2-nodebug-jsmin.js"></script>
+<script type="text/javascript">
+// soundmanager2 settings
+soundManager.url = '/sound/soundmanager2.swf';
+soundManager.flashVersion = 8;      
+soundManager.useFlashBlock = false;  
+soundManager.onload = function() {    
+  soundManager.createSound('interesting','/sound/interesting.mp3');
+  soundManager.play('interesting');  
+};
+</script>
+<script type="text/javascript">
+RimgMax = 406;
+FuckFlag = 0;
+var t = 0;
+var i = 0;
+var color_is_on = 0;
+
+FirstPart = '<img src="/pokerimg/';
+LastPart = '.jpg" onmouseout="clearCell(\'rimg\')" onmouseclick="rimgClick()">';
+
+function cpClick(){
+ window.location="/chinese/index.html";
+}
+
+function cpOver(){
+  document.getElementById("cp").innerHTML="IRC CHINESE POKER";
+  document.getElementById("cp").style.backgroundColor="#656200";
+  document.getElementById("cp").style.fontSize="11";
+  document.getElementById("cp").style.color="#9a9eff";
+}
+
+function rimgClick(){
+ var r = Math.ceil(Math.random() * RimgMax);
+ if (r > 99)
+  new String(Path = FirstPart + r + LastPart);
+ else if (r > 9)
+  new String(Path = FirstPart + '0' + r + LastPart);
+ else
+  new String(Path = FirstPart + '00' + r + LastPart);
+ document.getElementById("rimg").innerHTML=Path;
+}
+
+function oface(){
+ document.getElementById("oface").innerHTML=":o";
+ document.getElementById("oface").style.fontSize="9";
+ document.getElementById("oface").style.color="#6c172e";
+}
+
+function musicDisp(MusicStr,CellName,CellBG){
+ document.getElementById("music").innerHTML=MusicStr;
+ document.getElementById("music").style.fontSize="11";
+ document.getElementById("music").style.color="#8e2073";
+ document.getElementById(CellName).style.backgroundColor=CellBG;
+}
+
+function playSong(SongName){
+ new String(SongPath = '/sound/' + SongName + '.mp3');
+ soundManager.createSound(SongName,SongPath);
+ soundManager.stopAll();
+ soundManager.play(SongName);
+}
+
+function doColor(){
+ if (!color_is_on){
+  color_is_on=1;
+  colorCycle();
+  }
+}
+
+function colorCycle(){
+  i++;
+  if (i == 1){
+   document.getElementById("c1").style.backgroundColor="#c69cc5";
+   document.getElementById("c2").style.backgroundColor="#70c284";
+   document.getElementById("c3").style.backgroundColor="#837cb6";
+   document.getElementById("c4").style.backgroundColor="#43585c";
+   document.getElementById("c5").style.backgroundColor="#162455";
+   }
+  else if (i == 2){
+   document.getElementById("c1").style.backgroundColor="#162455";
+   document.getElementById("c2").style.backgroundColor="#c69cc5";
+   document.getElementById("c3").style.backgroundColor="#70c284";
+   document.getElementById("c4").style.backgroundColor="#837cb6";
+   document.getElementById("c5").style.backgroundColor="#43585c";
+  }
+  else if (i == 3){
+   document.getElementById("c1").style.backgroundColor="#43585c";
+   document.getElementById("c2").style.backgroundColor="#162455";
+   document.getElementById("c3").style.backgroundColor="#c69cc5";
+   document.getElementById("c4").style.backgroundColor="#70c284";
+   document.getElementById("c5").style.backgroundColor="#837cb6";
+  }
+  else if (i == 4){
+   document.getElementById("c1").style.backgroundColor="#837cb6";
+   document.getElementById("c2").style.backgroundColor="#43585c";
+   document.getElementById("c3").style.backgroundColor="#162455";
+   document.getElementById("c4").style.backgroundColor="#c69cc5";
+   document.getElementById("c5").style.backgroundColor="#70c284";
+  }
+  else{
+   document.getElementById("c1").style.backgroundColor="#70c284";
+   document.getElementById("c2").style.backgroundColor="#837cb6";
+   document.getElementById("c3").style.backgroundColor="#43585c";
+   document.getElementById("c4").style.backgroundColor="#162455";
+   document.getElementById("c5").style.backgroundColor="#c69cc5";
+   i = 0;
+  }
+ t = setTimeout("colorCycle()",200);
+}
+
+function colorStop(){
+ clearTimeout(t);
+ color_is_on = 0;
+}
+
+function zoidOver(){
+ document.getElementById("v1").innerHTML="VROOM";
+ document.getElementById("zoid").innerHTML="<img src='zoid.gif'>";
+ document.getElementById("v2").innerHTML="VROOM";
+ document.getElementById("v1").style.fontSize="8";
+ document.getElementById("v2").style.fontSize="8";
+}
+
+function dispFuck(){
+ if (FuckFlag == 0){
+  document.getElementById("fuck").innerHTML="<img src='fuck.gif'>";
+  FuckFlag = 1;}
+ else{
+  clearCell('fuck');
+  FuckFlag = 0;}
+}
+
+function clearCell(CellName, CellColor){
+ document.getElementById(CellName).innerHTML="";
+ document.getElementById(CellName).style.backgroundColor=CellColor;
+}
+</script>
+</head>
+<body background="bg.png">
+<table border=34 cellspacing=5 cellpadding=2 bgcolor=#aeced4>
+ <tr>
+  <td bgcolor=#1937bc></td>
+  <td height=31 bgcolor=#87841b colspan=5 onclick="cpClick()" onmouseover="cpOver()" onmouseout="clearCell('cp','#87841b')" id="cp"></td>
+ </tr>
+ <tr>
+  <td bgcolor=#7e5efb>
+   <table border=21 cellspacing=5 cellpadding=2>
+    <tr>
+     <td bgcolor=#9edcb1></td>
+     <td height=31 width=19 bgcolor=#87d4bd id="v1"></td>
+     <td bgcolor=#d8854f id="zoid"></td>
+     <td bgcolor=#90bdcc id="v2" onmouseover="doColor()" onmouseout="colorStop()"></td>
+     <td rowspan=2 colspan=2 bgcolor=#f21fb5></td>
+    </tr>
+    <tr>
+     <td bgcolor=#2599e3>
+      <table border=13 cellspacing=5 cellpadding=2>
+       <tr>
+        <td bgcolor=#b96b39 id="rimg" onclick="rimgClick()"></td>
+        <td width=16 bgcolor=#4f4ad9></td>
+        <td width=21 bgcolor=#8279aa></td>
+        <td height=22 width=9 bgcolor=#93e8d1 id="oface" onmouseover="oface()" onmouseout="clearCell('oface')"></td>
+       </tr>
+       <tr>
+        <td bgcolor=#bf16d3>
+         <table border=8 cellspacing=5 cellpadding=2>
+          <tr>
+           <td width=8 bgcolor=#e2b6b6></td>
+           <td width=11 bgcolor=#e1ff20 onmouseover="zoidOver()" onmouseout="clearCell('v1');clearCell('zoid');clearCell('v2')" onclick="playSong('zoidberg')"></td>
+           <td bgcolor=#bb6cd7></td>
+           <td height=15 width=26 bgcolor=#4d181c></td>
+           <td width=24 bgcolor=#7694ce></td>
+           <td width=28 bgcolor=#69b856></td>
+          </tr>
+          <tr>
+           <td width=4 bgcolor=#69ef79></td>
+           <td height=28 width=11 bgcolor=#ecffa8></td>
+           <td width=21 bgcolor=#3034c8></td>
+           <td width=18 bgcolor=#473484 ondblclick="dispFuck()" id="fuck"></td>
+           <td bgcolor=#421ab8></td>
+           <td width=1 bgcolor=#2d3cc3></td>
+          </tr>
+         </table>
+        </td>
+        <td width=20 bgcolor=#d1bf45></td>
+        <td bgcolor=#8948bc></td>
+        <td width=4 bgcolor=#be0af4></td>
+        <td width=24 bgcolor=#ad1635></td>
+        <td width=10 bgcolor=#667df9></td>
+       </tr>
+      </table>
+     </td>
+     <td colspan=3 bgcolor=#0180e8></td>
+    </tr>
+    <tr>
+     <td bgcolor=#71df8c id="music" onmouseover="musicDisp('Pick a tune ---&gt;')" onmouseout="clearCell('music')" align=right></td>
+     <td width=7 bgcolor=#bd79e7 id="dark" onmouseover="musicDisp('dark pastels','dark','#9b57c5')" onmouseout="clearCell('music');clearCell('dark','#bd79e7')" onclick="playSong('dark')"></td>
+     <td width=4 bgcolor=#3d0b15 id="serenity" onmouseover="musicDisp('serenity','serenity','#25070c')" onmouseout="clearCell('music');clearCell('serenity','#3d0b15')" onclick="playSong('serenity')"></td>
+     <td height=32 width=30 bgcolor=#8b331b id="beats1" onmouseover="musicDisp('beats1','beats1','#69110c')" onmouseout="clearCell('music');clearCell('beats1','#8b331b')" onclick="playSong('beats1')"></td>
+     <td width=26 bgcolor=#047d68 id="interesting" onmouseover="musicDisp('interesting','interesting','#025b46')" onmouseout="clearCell('music');clearCell('interesting','#047d68')" onclick="playSong('interesting')"></td>
+     <td bgcolor=#965ed6 id="badmeth" onmouseover="musicDisp('bad meth','badmeth','#753cb4')" onmouseout="clearCell('music');clearCell('badmeth','#965ed6')" onclick="playSong('badmeth')"></td>
+    </tr>
+    <tr>
+     <td height=28 bgcolor=#6580bf></td>
+     <td width=20 bgcolor=#0a1f28></td>
+     <td width=24 bgcolor=#54b9f2></td>
+     <td width=26 bgcolor=#a7110d></td>
+     <td width=28 bgcolor=#740112></td>
+     <td width=24 bgcolor=#34926d rowspan=2></td>
+    </tr>
+    <tr>
+     <td bgcolor=#126e95></td>
+     <td width=26 bgcolor=#cc61ca></td>
+     <td width=6 bgcolor=#e89155></td>
+     <td height=15 width=1 bgcolor=#72f347></td>
+     <td width=30 bgcolor=#facb2a></td>
+    </tr>
+   </table>
+  </td>
+  <td width=8 bgcolor=#70c284 id="c1"></td>
+  <td width=14 bgcolor=#837cb6 id="c2"></td>
+  <td width=10 bgcolor=#43585c id="c3"></td>
+  <td width=23 bgcolor=#162455 id="c4"></td>
+  <td width=13 bgcolor=#c69cc5 id="c5"></td>
+ </tr>
+</table>
+</body>
+</html>
