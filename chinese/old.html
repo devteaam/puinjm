@@ -1,0 +1,69 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>IRC CHINESE POKER TIME</title>
+</head>
+
+<body text="#FFFFFF" bgcolor="#000000">
+<center><font size=12>How to play:<br>IRC CHINESE POKER</font><br>
+Bot by Nick
+<nobr><img src="flaganim1.gif">&nbsp;<img src="rfheart.jpg">&nbsp;<img src="flaganim2.gif">&nbsp;<img src="rfdiamond.gif">&nbsp;<img src="flaganim1.gif"></nobr><br>
+<img src="front.jpg"></center>
+
+<font size=6><b>Public Commands</b></font>&nbsp;&nbsp;<font size=2>(just say em in the channel)</font><br>
+<img src="spacer.gif" width=75 height=1><b>join</b> - Joins the game<br>
+<img src="spacer.gif" width=75 height=1><b>quit</b> - Quits the game (if currently in a hand, removes you at the end of the hand <font color=#EE2222>*NYI*</font>)<br>
+<img src="spacer.gif" width=75 height=1><b>whats the damage</b> - Displays lifetime winnings<img src="set1.png" align=right><br><br>
+
+<font size=6><b>Setting Hands</b></font>&nbsp;&nbsp;<font size=2>(/notice these commands to Annette_15)</font><br>
+<img src="spacer.gif" width=75 height=1><b>set a b c d e</b> - Sets the back hand with cards a,b,c,d,e<br>
+<img src="spacer.gif" width=75 height=1><b>set f g h i j</b> - Sets middle hand after front hand is set. Automatically sets remaining 3 cards to front
+<img src="set2.png" align=right><br>
+<img src="spacer.gif" width=75 height=1><b>unset</b> - Unsets all hands and returns to prompt for back hand<br>
+<img src="spacer.gif" width=75 height=1><b>natural (flush/straight/pairs/dragon)</b> - After setting, use this command if you have a natural (otherwise it won't count!)<br>
+<img src="spacer.gif" width=75 height=1><b>done</b> - Confirms set hands, once done, no changes can be made
+<img src="done.png" align=right><br>
+<img src="spacer.gif" width=75 height=1><b>surrender</b> - Surrenders your hand<br>
+
+<img src="spacer.gif" width=30 height=1><font size=5><b>Useful aliases</b></font> <font size=2>use em!</font><br>
+<img src="spacer.gif" width=75 height=1>/set /notice annette_15 set $$1 $2 $3 $4 $5<br>
+<img src="spacer.gif" width=75 height=1>/d /notice annette_15 done<br>
+<img src="spacer.gif" width=75 height=1>/unset /notice annette_15 unset<br>
+<img src="spacer.gif" width=75 height=1>/nat /notice annette_15 natural $$1<br>
+<img src="spacer.gif" width=75 height=1>/surr /notice annette_15 surrender<br><br>
+
+<font size=6><b>Playing for Clams</b></font>&nbsp;&nbsp;<font size=2>say em in the channel <font color=#EE2222>*NYI*</font></font><br>
+<img src="spacer.gif" width=75 height=1><b>!challenge [player] X</b> - Challenges a player currently sitting to play for $X a point<br>
+<img src="spacer.gif" width=75 height=1><b>!accept [player]</b> - Accepts a challenge from the indicated player<br>
+<img src="spacer.gif" width=75 height=1><b>!deny [player]</b> - Denies a challenge from the indicated player<br>
+<img src="spacer.gif" width=75 height=1><b>!end [player]</b> - Ends an ongoing challenge with the indicated player<br>
+<img src="spacer.gif" width=75 height=1><b>!stakes</b> - Displays your ongoing challenges<br><br>
+
+<font size=6><b>Payouts & Bonus Hands</b></font><br>
+<img src="spacer.gif" width=30 height=1><font size=5><b>Channel commands</b></font> <font color=#EE2222>*NYI*</font><br>
+<img src="spacer.gif" width=75 height=1><b>!change payout x y z</b> - Initiates a vote to change the payout: +x for winning 2 hands, +y for a sweep, -z for surrender<br>
+<img src="spacer.gif" width=75 height=1><b>!change bonus [name]</b> - Initiates a vote to change the bonus structure<br>
+<img src="spacer.gif" width=75 height=1><b>!vote [y/n]</b> - Votes on the current proposal, majority needed to change<br>
+<img src="spacer.gif" width=30 height=1><font size=5><b>Notice commands</b></font> <font color=#EE2222>*NYI*</font><br>
+<img src="spacer.gif" width=75 height=1><b>bonus</b> - Displays current bonus values<br>
+<img src="spacer.gif" width=75 height=1><b>listbonus [name]</b> - Displays bonus values for bonus set [name]. If no name is indicated, displays a list of the bonus sets<br>
+<img src="spacer.gif" width=75 height=1><b>setbonus [name] a b c d e f g h i j</b> - Creates a custom bonus structure (see table)<br>
+<table align=center border=1>
+ <tr> <td colspan=2>Bonus Value (in betting units)</td> </tr>
+ <tr> <td>Bonus hand</td> <td>default</td>
+ <tr> <td>a. Natural: Dragon</td>      <td>13</td></tr>
+ <tr> <td>b. Natural: 3 flushes</td>   <td>4</td></tr>
+ <tr> <td>c. Natural: 3 straights</td> <td>4</td></tr>
+ <tr> <td>d. Natural: 6 pairs</td>     <td>4</td></tr>
+ <tr> <td>e. Back: StrFlush</td>       <td>5</td></tr>
+ <tr> <td>f. Back: Quads</td>          <td>4</td></tr>
+ <tr> <td>g. Middle: StrFlush</td>     <td>10</td></tr>
+ <tr> <td>h. Middle: Quads</td>        <td>8</td></tr>
+ <tr> <td>i. Middle: FullHouse</td>    <td>2</td></tr>
+ <tr> <td>j. Front: Trips</td>         <td>3</td></tr>
+</table>
+<br><br><font size=1>DISCLAIMER: Playing for 'real' money isn't really real...this ain't a gambling bot. But if it were, you'd have to arrange the transfer of funds elsewhere...just saying. Don't be a deadbeat.</font> 
+</body>
+</html>
